@@ -1,9 +1,14 @@
 from django.shortcuts import render
 
-from django.contrib.auth.models import User
 from rest_framework.generics import ListAPIView
-from .serializers import UserSerializer
+from .models import Users, Group  
+from .serializers import UserSerializer, GroupSerializer
 
 class UserListView(ListAPIView):
-    queryset = User.objects.all()
+    queryset = Users.objects.all()
     serializer_class = UserSerializer
+    
+    
+class GroupListView(ListAPIView):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer

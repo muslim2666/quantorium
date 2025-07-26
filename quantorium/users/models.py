@@ -12,3 +12,11 @@ class Users(models.Model):
     def __str__(self):
         return self.last_name + ' ' + self.first_name + ' ' + self.middle_name
     
+    
+    
+class Group(models.Model):
+    group_name = models.CharField(max_length=225)
+    teacher_name = models.CharField(max_length=225)
+    
+    def __str__(self):
+        return self.group_name + ' ' + self.teacher_name
